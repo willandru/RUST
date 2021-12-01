@@ -24,7 +24,7 @@ fn main() {
   println!("{:?}", output(first_number,operator,second_number,result));
 }
 
-fn operate(operator:char, first_number: f32, second_number:f32) -> f32{
+/*fn operate(operator:char, first_number: f32, second_number:f32) -> f32{
   if operator == '+'{
     first_number + second_number
   } else if operator == '-'{
@@ -35,6 +35,16 @@ fn operate(operator:char, first_number: f32, second_number:f32) -> f32{
     return first_number*second_number;
   }else{
      0.0
+  }
+}*/
+
+fn operate(operator:char, first_number: f32, second_number:f32) -> f32{
+  match operator{
+    '+' => first_number+second_number,
+    '-' => first_number-second_number,
+    '*' | 'X' | 'x' => first_number*second_number,
+    '/' => first_number/second_number,
+    _ => panic!("Invalid operator USED.")
   }
 }
 
